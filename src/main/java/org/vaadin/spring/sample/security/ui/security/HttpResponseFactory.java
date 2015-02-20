@@ -7,7 +7,14 @@ import org.springframework.beans.factory.FactoryBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
-
+/**
+ * Factory to provide access to the {@link HttpServletResponse}
+ * 
+ * @author Marko Radinovic (markoradinovic79@gmail.com)
+ * @author Gert-Jan Timmer (gjr.timmer@gmail.com)
+ *
+ * Initial code:<a href="https://github.com/markoradinovic/Vaadin4Spring-MVP-Sample-SpringSecurity">https://github.com/markoradinovic/Vaadin4Spring-MVP-Sample-SpringSecurity</a>
+ */
 public class HttpResponseFactory implements FactoryBean<HttpServletResponse>, ApplicationContextAware {
 
 	private ApplicationContext applicationContext;

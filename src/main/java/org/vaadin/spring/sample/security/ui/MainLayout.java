@@ -10,15 +10,15 @@ import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.vaadin.spring.UIScope;
-import org.vaadin.spring.VaadinComponent;
+import org.vaadin.spring.annotation.VaadinComponent;
+import org.vaadin.spring.annotation.VaadinUIScope;
 import org.vaadin.spring.events.EventBus;
-import org.vaadin.spring.events.EventBusListenerMethod;
 import org.vaadin.spring.events.EventScope;
+import org.vaadin.spring.events.annotation.EventBusListenerMethod;
 import org.vaadin.spring.mvp.MvpPresenterView;
 import org.vaadin.spring.navigator.SpringViewProvider;
 import org.vaadin.spring.sample.security.ui.security.AccessDeniedEvent;
-import org.vaadin.spring.security.Security;
+import org.vaadin.spring.security.VaadinSecurity;
 
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener;
@@ -37,7 +37,7 @@ import com.vaadin.ui.Panel;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
-@UIScope
+@VaadinUIScope
 @VaadinComponent
 @SuppressWarnings("serial")
 public class MainLayout extends VerticalLayout implements ViewDisplay, ClickListener, ViewChangeListener {
@@ -57,7 +57,7 @@ public class MainLayout extends VerticalLayout implements ViewDisplay, ClickList
 	private String key = UUID.randomUUID().toString();
 	
 	@Autowired
-	Security security;
+	VaadinSecurity security;
 	
 	@Autowired
 	SpringViewProvider springViewProvider;

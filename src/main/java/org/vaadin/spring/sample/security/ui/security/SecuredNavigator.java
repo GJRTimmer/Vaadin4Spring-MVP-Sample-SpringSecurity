@@ -4,7 +4,7 @@ import org.vaadin.spring.events.EventBus;
 import org.vaadin.spring.events.EventScope;
 import org.vaadin.spring.navigator.SpringViewProvider;
 import org.vaadin.spring.sample.security.ui.ViewToken;
-import org.vaadin.spring.security.Security;
+import org.vaadin.spring.security.VaadinSecurity;
 
 import com.vaadin.navigator.Navigator;
 import com.vaadin.navigator.ViewDisplay;
@@ -15,11 +15,11 @@ public class SecuredNavigator extends Navigator {
 
 	private static final long serialVersionUID = -1550472603474329940L;
 	
-	final Security security;
+	final VaadinSecurity security;
 	final SpringViewProvider viewProvider;
 	final EventBus eventBus;
 			
-	public SecuredNavigator(UI ui, ViewDisplay display, SpringViewProvider viewProvider, Security security, EventBus eventBus) {
+	public SecuredNavigator(UI ui, ViewDisplay display, SpringViewProvider viewProvider, VaadinSecurity security, EventBus eventBus) {
 		super(ui, display);		
 		this.security = security;
 		this.viewProvider = viewProvider;
@@ -79,6 +79,4 @@ public class SecuredNavigator extends Navigator {
 		}
 		
 	}
-
-
 }

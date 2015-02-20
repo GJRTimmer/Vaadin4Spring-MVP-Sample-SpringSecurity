@@ -1,7 +1,7 @@
 package org.vaadin.spring.sample.security.ui.home;
 
-import org.vaadin.spring.UIScope;
-import org.vaadin.spring.VaadinComponent;
+import org.vaadin.spring.annotation.VaadinComponent;
+import org.vaadin.spring.annotation.VaadinUIScope;
 import org.vaadin.spring.mvp.view.AbstractMvpView;
 import org.vaadin.spring.sample.security.ui.home.HomePresenter.HomeView;
 
@@ -11,7 +11,7 @@ import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.themes.ValoTheme;
 
 @SuppressWarnings("serial")
-@UIScope
+@VaadinUIScope
 @VaadinComponent
 public class HomeViewImpl extends AbstractMvpView implements HomeView  {
 

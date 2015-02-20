@@ -10,6 +10,14 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * Filter to provide access to the {@link HttpServletResponse}
+ * 
+ * @author Marko Radinovic (markoradinovic79@gmail.com)
+ * @author Gert-Jan Timmer (gjr.timmer@gmail.com)
+ *
+ * Initial code:<a href="https://github.com/markoradinovic/Vaadin4Spring-MVP-Sample-SpringSecurity">https://github.com/markoradinovic/Vaadin4Spring-MVP-Sample-SpringSecurity</a>
+ */
 public class HttpResponseFilter implements Filter {
 
 	private ThreadLocal<HttpServletResponse> responses = new ThreadLocal<HttpServletResponse>();

@@ -1,7 +1,7 @@
 package org.vaadin.spring.sample.security.ui.user;
 
-import org.vaadin.spring.UIScope;
-import org.vaadin.spring.VaadinComponent;
+import org.vaadin.spring.annotation.VaadinComponent;
+import org.vaadin.spring.annotation.VaadinUIScope;
 import org.vaadin.spring.mvp.view.AbstractMvpView;
 import org.vaadin.spring.sample.security.ui.user.UserPresenter.UserView;
 
@@ -14,7 +14,7 @@ import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.ui.themes.ValoTheme;
 
-@UIScope
+@VaadinUIScope
 @VaadinComponent
 @SuppressWarnings("serial")
 public class UserViewImpl extends AbstractMvpView implements UserView{

@@ -12,23 +12,23 @@ import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.RememberMeServices;
 import org.springframework.security.web.authentication.rememberme.AbstractRememberMeServices;
-import org.vaadin.spring.UIScope;
+import org.vaadin.spring.annotation.VaadinUIScope;
 import org.vaadin.spring.events.EventBus;
 import org.vaadin.spring.events.EventScope;
 import org.vaadin.spring.mvp.MvpHasPresenterHandlers;
 import org.vaadin.spring.mvp.MvpView;
 import org.vaadin.spring.mvp.presenter.AbstractMvpPresenterView;
-import org.vaadin.spring.navigator.VaadinView;
+import org.vaadin.spring.navigator.annotation.VaadinView;
 import org.vaadin.spring.sample.security.ui.UserSignedInEvent;
 import org.vaadin.spring.sample.security.ui.ViewToken;
 import org.vaadin.spring.sample.security.ui.security.HttpRequestResponseService;
-import org.vaadin.spring.security.Security;
+import org.vaadin.spring.security.VaadinSecurity;
 
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.ui.UI;
 
 @SuppressWarnings("serial")
-@UIScope
+@VaadinUIScope
 @VaadinView(name=ViewToken.SIGNIN)
 public class SignInPresenter extends AbstractMvpPresenterView<SignInPresenter.SignInView> implements SignInPresenterHandlers {
 	
@@ -38,7 +38,7 @@ public class SignInPresenter extends AbstractMvpPresenterView<SignInPresenter.Si
 	}
 	
 	@Autowired
-	Security security;
+	VaadinSecurity security;
 	
 	@Autowired
 	AuthenticationManager authenticationManager;

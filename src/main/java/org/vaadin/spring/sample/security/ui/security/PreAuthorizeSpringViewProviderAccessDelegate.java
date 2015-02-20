@@ -20,17 +20,18 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.util.MethodInvocationUtils;
 import org.springframework.util.ClassUtils;
 import org.vaadin.spring.navigator.SpringViewProvider.ViewProviderAccessDelegate;
-import org.vaadin.spring.security.Security;
+import org.vaadin.spring.security.VaadinSecurity;
 
+import com.vaadin.navigator.View;
 import com.vaadin.ui.UI;
 
 public class PreAuthorizeSpringViewProviderAccessDelegate implements ViewProviderAccessDelegate {
 
-	private final Security security;
+	private final VaadinSecurity security;
     private final ApplicationContext applicationContext;
 
     @Autowired
-    public PreAuthorizeSpringViewProviderAccessDelegate(Security security, ApplicationContext applicationContext) {
+    public PreAuthorizeSpringViewProviderAccessDelegate(VaadinSecurity security, ApplicationContext applicationContext) {
         this.security = security;
         this.applicationContext = applicationContext;
     }
@@ -64,6 +65,11 @@ public class PreAuthorizeSpringViewProviderAccessDelegate implements ViewProvide
 			return true;
 		}
 		
+	}
+
+	@Override
+	public boolean isAccessGranted(View view, UI ui) {
+		return true;
 	}
 
 }

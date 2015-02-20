@@ -27,7 +27,7 @@ import org.springframework.security.web.authentication.rememberme.PersistentToke
 import org.vaadin.spring.sample.security.account.JdbcUserDetailsService;
 import org.vaadin.spring.sample.security.ui.security.PreAuthorizeSpringViewProviderAccessDelegate;
 import org.vaadin.spring.sample.security.ui.security.VaadinPersistentTokenBasedRememberMeServices;
-import org.vaadin.spring.security.Security;
+import org.vaadin.spring.security.VaadinSecurity;
 
 
 @Configuration
@@ -39,7 +39,7 @@ public class SecurityConfig   {
 	private ApplicationContext context;
 	
 	@Autowired
-	private Security security;
+	private VaadinSecurity security;
 	
 	@Bean
 	public PreAuthorizeSpringViewProviderAccessDelegate preAuthorizeSpringViewProviderAccessDelegate() {
@@ -144,11 +144,5 @@ public class SecurityConfig   {
 					.and()				
 				.csrf().disable();
 		}
-		
-		
-		
-		
 	}
-	
-
 }

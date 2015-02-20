@@ -1,7 +1,7 @@
 package org.vaadin.spring.sample.security.ui.signup;
 
-import org.vaadin.spring.UIScope;
-import org.vaadin.spring.VaadinComponent;
+import org.vaadin.spring.annotation.VaadinComponent;
+import org.vaadin.spring.annotation.VaadinUIScope;
 import org.vaadin.spring.mvp.view.AbstractMvpView;
 import org.vaadin.spring.sample.security.account.Account;
 import org.vaadin.spring.sample.security.ui.signup.SignUpPresenter.SignUpView;
@@ -22,7 +22,7 @@ import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.ui.themes.ValoTheme;
 
 @SuppressWarnings("serial")
-@UIScope
+@VaadinUIScope
 @VaadinComponent
 public class SignUpViewImpl extends AbstractMvpView implements SignUpView, ClickListener {
 

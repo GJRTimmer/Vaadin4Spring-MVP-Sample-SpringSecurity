@@ -3,19 +3,19 @@ package org.vaadin.spring.sample.security.ui;
 import java.util.Locale;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.vaadin.spring.VaadinUI;
+import org.vaadin.spring.annotation.VaadinUIScope;
 import org.vaadin.spring.events.EventBus;
 import org.vaadin.spring.navigator.SpringViewProvider;
 import org.vaadin.spring.sample.security.ui.security.SecuredNavigator;
 import org.vaadin.spring.sample.security.ui.security.SpringSecurityErrorHandler;
-import org.vaadin.spring.security.Security;
+import org.vaadin.spring.security.VaadinSecurity;
 
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.Title;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.UI;
 
-@VaadinUI
+@VaadinUIScope
 @Title("Vaadin4Spring Security Demo")
 @Theme("valo")
 @SuppressWarnings("serial")
@@ -29,7 +29,7 @@ public class MainUI extends UI {
 	EventBus eventBus;
 	
 	@Autowired
-	Security security;
+	VaadinSecurity security;
 	
 	@Autowired
 	MainLayout mainLayout;

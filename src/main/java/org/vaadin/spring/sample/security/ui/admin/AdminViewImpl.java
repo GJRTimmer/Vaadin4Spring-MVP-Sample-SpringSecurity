@@ -1,7 +1,7 @@
 package org.vaadin.spring.sample.security.ui.admin;
 
-import org.vaadin.spring.VaadinComponent;
-import org.vaadin.spring.UIScope;
+import org.vaadin.spring.annotation.VaadinComponent;
+import org.vaadin.spring.annotation.VaadinUIScope;
 import org.vaadin.spring.mvp.view.AbstractMvpView;
 import org.vaadin.spring.sample.security.ui.admin.AdminPresenter.AdminView;
 
@@ -10,7 +10,7 @@ import com.vaadin.ui.Label;
 import com.vaadin.ui.themes.ValoTheme;
 
 @SuppressWarnings("serial")
-@UIScope
+@VaadinUIScope
 @VaadinComponent
 public class AdminViewImpl extends AbstractMvpView implements AdminView {
 	

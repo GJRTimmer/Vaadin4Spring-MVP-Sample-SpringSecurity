@@ -2,20 +2,20 @@ package org.vaadin.spring.sample.security.ui.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
-import org.vaadin.spring.UIScope;
+import org.vaadin.spring.annotation.VaadinUIScope;
 import org.vaadin.spring.events.EventBus;
 import org.vaadin.spring.mvp.MvpHasPresenterHandlers;
 import org.vaadin.spring.mvp.MvpView;
 import org.vaadin.spring.mvp.presenter.AbstractMvpPresenterView;
-import org.vaadin.spring.navigator.VaadinView;
+import org.vaadin.spring.navigator.annotation.VaadinView;
 import org.vaadin.spring.sample.security.service.DummyService;
 import org.vaadin.spring.sample.security.ui.ViewToken;
-import org.vaadin.spring.security.Security;
+import org.vaadin.spring.security.VaadinSecurity;
 
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 
 @SuppressWarnings("serial")
-@UIScope
+@VaadinUIScope
 @VaadinView(name=ViewToken.USER)
 @Secured({"ROLE_USER", "ROLE_ADMIN"})
 public class UserPresenter extends AbstractMvpPresenterView<UserPresenter.UserView> implements UserPresenterHandlers {
@@ -29,7 +29,7 @@ public class UserPresenter extends AbstractMvpPresenterView<UserPresenter.UserVi
 	DummyService dummyService;
 	
 	@Autowired
-	Security security;
+	VaadinSecurity security;
 	
 	@Autowired
 	public UserPresenter(UserView view, EventBus eventBus) {
